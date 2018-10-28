@@ -1,3 +1,7 @@
+readme=""
+commit=""
+conf=""
+repo=""
 read -p "what do you want your README.md to be: " readme
 echo $readme >> README.md
 git init
