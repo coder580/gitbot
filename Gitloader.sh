@@ -6,9 +6,9 @@ read -p "what is your github username: " user
 read -p "what is the repo name: " repo
 read -p "what do you want to name your first commit: " commit
 git commit -m "$commit"
-y='y'
+n='n'
 read -p "please confirm this information is accurate type y to accept type n to cancel: " conf
-if [ "conf" == "y" ]; then
+if [ "$conf" != "$n" ]; then
   git remote add origin git@github.com:$user/$repo.git
   git push -u origin master
 else
