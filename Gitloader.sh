@@ -3,6 +3,7 @@ commit=""
 conf=""
 repo=""
 read -p "what do you want your README.md to be: " readme
+rm -rf README.md
 echo $readme >> README.md
 git init
 git add *
