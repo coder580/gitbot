@@ -1,3 +1,4 @@
+file="~/.gitload/repos.txt"
 commit=""
 conf=""
 repo=""
@@ -11,6 +12,7 @@ echo $usern > ~/.gitload/user.txt
 fi
 user="$(cat ~/.gitload/user.txt)"
 read -p "what is the repo name: " repo
+grep -qF -- "$repo" "$file" || echo "$repo" >> "$file"
 read -p "what do you want to name the commit: " commit
 git commit -m "$commit" 
 n='n'
