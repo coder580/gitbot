@@ -1,10 +1,15 @@
 commit=""
 conf=""
 repo=""
+mkdir ~/.gitload
 vim README.md
 git init
 git add *
-read -p "what is your github username: " user
+if [ ! -f ~/.gitload/user.txt ]; then
+read -p "what is your github username: " usern
+fi
+echo $usern >~/.gitload/user.txt
+user="$(cat ~/.gitload/user.txt)"
 read -p "what is the repo name: " repo
 read -p "what do you want to name the commit: " commit
 git commit -m "$commit"
