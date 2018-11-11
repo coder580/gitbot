@@ -2,7 +2,11 @@ file="~/.gitload/repos.txt"
 commit=""
 conf=""
 repo=""
+if [ "$1" == "--nano" ]; then
+nano README.md
+else
 vim README.md
+fi
 git init
 git add *
 if [ ! -f ~/.gitload/user.txt ]; then
