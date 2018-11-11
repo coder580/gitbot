@@ -8,11 +8,15 @@ git add *
 if [ ! -f ~/.gitload/user.txt ]; then
 read -p "what is your github username: " usern
 mkdir ~/.gitload
+echo " " >> ~/.gitload/repos.txt
 echo $usern > ~/.gitload/user.txt
 fi
 user="$(cat ~/.gitload/user.txt)"
+if [ ! -f .git/name.txt ]; then
 read -p "what is the repo name: " repo
-grep -qF -- "$repo" "$file" || echo "$repo" >> "$file"
+echo $repo > ~/.gitload/repos.txt
+echo $repo >> .git/name.txt
+fi
 read -p "what do you want to name the commit: " commit
 git commit -m "$commit" 
 n='n'
