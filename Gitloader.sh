@@ -1,9 +1,7 @@
-readme=""
 commit=""
 conf=""
 repo=""
-read -p "what do you want your README.md to be: " readme
-echo $readme >> README.md
+vim README.md
 git init
 git add *
 read -p "what is your github username: " user
