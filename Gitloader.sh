@@ -12,12 +12,12 @@ fi
 user="$(cat ~/.gitload/user.txt)"
 read -p "what is the repo name: " repo
 read -p "what do you want to name the commit: " commit
-git commit -m "$commit"
+git commit -m "$commit" 
 n='n'
 read -p "please confirm this information is accurate type y to accept type n to cancel: " conf
 if [ "$conf" != "$n" ]; then
   git remote add origin git@github.com:$user/$repo.git
-  git push -u origin master
+  git push -u origin master > /dev/null
 else
   echo "you canceled"
 fi
